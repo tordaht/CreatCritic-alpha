@@ -7,10 +7,17 @@ import os
 import json
 from flask import Flask, request, render_template, jsonify
 from werkzeug.utils import secure_filename
-import google.generativeai as genai
 from PIL import Image
 import io
 import base64
+
+# Try to import Gemini API
+try:
+    import google.generativeai as genai
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GEMINI_AVAILABLE = False
+    print("Warning: google.generativeai not available")
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
@@ -33,6 +40,9 @@ def index():
 @app.route('/analyze', methods=['POST'])
 def analyze():
     try:
+        if not GEMINI_AVAILABLE:
+            return jsonify({'error': 'Gemini API kütüphanesi yüklü değil'}), 500
+            
         # Get form data
         file = request.files.get('file')
         brief_info = request.form.get('brief_info', '')
