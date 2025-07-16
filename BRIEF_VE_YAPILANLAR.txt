@@ -1,0 +1,33 @@
+CreaCritic - Proje Özeti ve Yapılanlar
+=====================================
+
+Proje Brief:
+------------
+CreaCritic, Ozan karakter profiline dayalı, Google Gemini API, özel Ozan stil motoru ve matematiksel model entegreli bir tasarım eleştiri sistemidir. Kullanıcıdan alınan brief ve tasarım savunması ile, yüklenen görseli analiz eder ve Ozan stilinde detaylı bir değerlendirme sunar.
+
+Ana Özellikler:
+---------------
+- Flask tabanlı web arayüzü
+- Dosya yükleme ve analiz (sadece görsel dosyalar)
+- Google Gemini API ile Ozan stili analiz
+- Responsive, kullanıcı dostu, iki sütunlu ve sticky analiz sayfası
+- Kullanıcıdan brief ve tasarım savunması alma
+- JSON ve HTML çıktı desteği
+- Seri no ve versiyon bilgisi arayüzde görünür
+- Hata yönetimi ve stabil çalışma
+
+Yapılan Ana Geliştirmeler:
+-------------------------
+- initialize_processors() fonksiyonu Flask app context içinde çağrılarak başlatma hatası giderildi
+- Gemini API anahtarı için UI ve localStorage entegrasyonu eklendi
+- Görsel gösterme hataları düzeltildi, sadece uygun dosya türleri destekleniyor
+- history.html eksikliği giderildi
+- Tüm kod ve dokümantasyon GitHub’a yüklendi
+- GitHub Pages için landing page ve otomatik deploy eklendi
+- IIS için setup ve deploy scriptleri hazırlandı
+
+Son Durum:
+----------
+Sistem stabil, kullanıcı dostu ve geliştirilmeye açık. Tüm ana fonksiyonlar çalışıyor. Hatalar ve çözümler HATA ÇÖZÜMLERİ.txt dosyasında tutuluyor.
+
+GitHub Adresi: https://github.com/tordaht/CreatCritic-alpha 

@@ -54,4 +54,11 @@ Neden: Template dosyaları oluşturulmamıştı
 Çözüm: history.html ve settings.html template dosyaları oluşturuldu
 Sonuç: /history ve /settings sayfaları artık çalışıyor
 
+HATA 8: Virtual Environment Aktif Etme Sorunu
+---------------------------------------------
+Hata: google-generativeai kütüphanesi yüklü değil hatası
+Neden: Virtual environment aktif edilmemişti
+Çözüm: venv_creacritic\Scripts\activate ile virtual environment aktif edildi
+Sonuç: Sistem tamamen çalışır durumda, GitHub'a v1.1.2 yüklendi
+
 NOT: Bu dosya her hata çözümünde güncellenecek! 

@@ -2,152 +2,21 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreaCritic - Geçmiş Analizler</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-        .history-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .history-item {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .history-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .history-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-        .history-date {
-            color: #666;
-            font-size: 14px;
-        }
-        .history-content {
-            margin-top: 15px;
-        }
-        .history-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .stat-item {
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .stat-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        .stat-value {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .back-button:hover {
-            background: #0056b3;
-        }
-        .empty-history {
-            text-align: center;
-            padding: 50px;
-            color: #666;
-        }
-        .serial-info {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
+    <title>Geçmiş - CreaCritic</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="serial-info">
-            Seri No: {{ serial_no }}
-        </div>
-        
-        <a href="/" class="back-button">← Ana Sayfaya Dön</a>
-        
-        <div class="history-container">
-            <h1>Geçmiş Analizler</h1>
-            
-            {% if history %}
-                {% for item in history %}
-                <div class="history-item">
-                    <div class="history-header">
-                        <div class="history-title">{{ item.filename }}</div>
-                        <div class="history-date">{{ item.timestamp }}</div>
-                    </div>
-                    
-                    <div class="history-content">
-                        <p><strong>Tasarım Türü:</strong> {{ item.design_type }}</p>
-                        <p><strong>Onay Kararı:</strong> 
-                            <span style="color: {% if item.approval_decision == 'ONAY' %}green{% elif item.approval_decision == 'REVİZYON' %}orange{% else %}red{% endif %}; font-weight: bold;">
-                                {{ item.approval_decision }}
-                            </span>
-                        </p>
-                        <p><strong>Utility Skoru:</strong> {{ "%.3f"|format(item.utility_score) }}</p>
-                        
-                        {% if item.has_brief %}
-                            <p><strong>Brief Bilgisi:</strong> ✅ Mevcut</p>
-                        {% endif %}
-                        
-                        {% if item.has_design_statement %}
-                            <p><strong>Tasarım Savunması:</strong> ✅ Mevcut</p>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="history-stats">
-                        <div class="stat-item">
-                            <div class="stat-label">Onay Skoru</div>
-                            <div class="stat-value">{{ "%.1f"|format(item.approval_score * 100) }}%</div>
-                        </div>
-                        
-                        {% if item.category_scores %}
-                        <div class="stat-item">
-                            <div class="stat-label">En Yüksek Kategori</div>
-                            <div class="stat-value">
-                                {% set max_category = item.category_scores.items() | max(attribute=1) %}
-                                {{ max_category[0] }}
-                            </div>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-                {% endfor %}
-            {% else %}
-                <div class="empty-history">
-                    <h3>Henüz analiz yapılmamış</h3>
-                    <p>İlk analizinizi yapmak için ana sayfaya dönün.</p>
-                </div>
-            {% endif %}
-        </div>
-    </div>
+    <h1>Analiz Geçmişi</h1>
+    <p>Burada geçmiş analizler listelenecek.</p>
+    {% if history %}
+        <ul>
+        {% for item in history %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Henüz analiz geçmişi yok.</p>
+    {% endif %}
+    <a href="/">Ana Sayfa</a>
 </body>
 </html> 

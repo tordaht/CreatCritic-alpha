@@ -5,6 +5,24 @@
 ![Flask](https://img.shields.io/badge/Flask-3.1.1-red)
 ![Gemini AI](https://img.shields.io/badge/Gemini%20AI-1.5%20Flash-orange)
 
+## Proje Özeti (Türkçe)
+CreaCritic, Ozan karakter profiline dayalı, Google Gemini API ve özel Ozan stil motoru ile çalışan bir tasarım eleştiri sistemidir. Flask tabanlı web arayüzü, dosya yükleme, analiz, responsive UI, JSON/HTML çıktı, kullanıcı brief ve savunma promptları ile stabil ve kullanıcı dostu bir yapı sunar.
+
+### Ana Özellikler
+- Google Gemini API ile Ozan stili analiz
+- Dosya yükleme ve analiz (görsel)
+- Kullanıcıdan brief ve tasarım savunması alma
+- Responsive, iki sütunlu analiz sayfası
+- Seri no ve versiyon bilgisi arayüzde görünür
+
+### Son Gelişmeler
+- Hatalar giderildi, Gemini API key yönetimi geliştirildi
+- history.html eklendi
+- GitHub’a yüklendi
+- IIS için deploy scriptleri hazırlandı
+
+Daha fazla detay için: BRIEF_VE_YAPILANLAR.txt
+
 ## 📋 Proje Hakkında
 
 CreaCritic, yapay zeka destekli tasarım analizi ve eleştiri sistemidir. Google Gemini AI kullanarak tasarım dosyalarını analiz eder ve Ozan Bayar'ın üslubunda eleştiri yapar.

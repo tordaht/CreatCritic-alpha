@@ -166,6 +166,16 @@
                     }
                     </script>
                     
+                    <div class="form-group" style="display: flex; gap: 10px; margin-top: 16px;">
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="btn-help">Gemini API Sayfasına Git</a>
+                        <button type="button" class="btn-help" onclick="showHelp()">Yardım</button>
+                    </div>
+                    <script>
+                    function showHelp() {
+                        alert('1. Brief ve tasarımcı açıklamasını doldurun.\n2. Görselinizi yükleyin.\n3. Gemini API anahtarınızı girin.\n4. Analiz için Gönder butonuna basın.\n\nGemini API anahtarınızı https://aistudio.google.com/app/apikey adresinden alabilirsiniz.');
+                    }
+                    </script>
+                    
                     <button type="submit" class="btn-analyze" id="btnAnalyze" disabled>
                         <i class="fas fa-magic"></i>
                         Analiz Et
