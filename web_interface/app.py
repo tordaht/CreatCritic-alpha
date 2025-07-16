@@ -71,6 +71,7 @@ def analyze():
                             serial_no=SERIAL_NO)
     
     except Exception as e:
+        print(f"Error in analyze: {str(e)}")
         return jsonify({'error': f'Hata: {str(e)}'}), 500
 
 @app.route('/api/health')
