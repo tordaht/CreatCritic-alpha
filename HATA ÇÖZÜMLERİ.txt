@@ -40,4 +40,11 @@ Neden: API key kaydetme özelliği yoktu
 Çözüm: localStorage ile API key otomatik kaydetme ve yükleme eklendi
 Sonuç: API key bir kez girildikten sonra otomatik kaydediliyor
 
+HATA 6: GitHub Repo Yükleme
+----------------------------
+Hata: Proje GitHub'a yüklenmemişti
+Neden: Git repo'su ve GitHub entegrasyonu eksikti
+Çözüm: Git repo'su oluşturuldu, GitHub'a yüklendi
+Sonuç: https://github.com/tordaht/CreatCritic-alpha adresinde yayında
+
 NOT: Bu dosya her hata çözümünde güncellenecek! 
