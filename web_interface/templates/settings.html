@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreaCritic - Ayarlar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .settings-section {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .settings-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            background: #0056b3;
+        }
+        .serial-info {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        .info-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #333;
+        }
+        .info-value {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="serial-info">
+            Seri No: {{ serial_no }}
+        </div>
+        
+        <a href="/" class="back-button">← Ana Sayfaya Dön</a>
+        
+        <div class="settings-container">
+            <h1>Sistem Ayarları</h1>
+            
+            <div class="settings-section">
+                <div class="settings-title">Sistem Bilgileri</div>
+                <div class="info-item">
+                    <div class="info-label">Seri No:</div>
+                    <div class="info-value">{{ serial_no }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Versiyon:</div>
+                    <div class="info-value">1.1.1</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Durum:</div>
+                    <div class="info-value">✅ Aktif</div>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <div class="settings-title">Desteklenen Dosya Formatları</div>
+                <div class="info-item">
+                    <div class="info-label">Görsel Formatlar:</div>
+                    <div class="info-value">JPG, JPEG, PNG, GIF, BMP</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Doküman Formatları:</div>
+                    <div class="info-value">PDF</div>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <div class="settings-title">API Durumu</div>
+                <div class="info-item">
+                    <div class="info-label">Gemini API:</div>
+                    <div class="info-value">✅ Bağlantı hazır</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Matematik Modeli:</div>
+                    <div class="info-value">✅ Aktif</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

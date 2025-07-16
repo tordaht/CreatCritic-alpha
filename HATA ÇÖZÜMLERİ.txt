@@ -47,4 +47,11 @@ Neden: Git repo'su ve GitHub entegrasyonu eksikti
 Çözüm: Git repo'su oluşturuldu, GitHub'a yüklendi
 Sonuç: https://github.com/tordaht/CreatCritic-alpha adresinde yayında
 
+HATA 7: Eksik Template Dosyaları
+---------------------------------
+Hata: history.html ve settings.html template dosyaları eksikti
+Neden: Template dosyaları oluşturulmamıştı
+Çözüm: history.html ve settings.html template dosyaları oluşturuldu
+Sonuç: /history ve /settings sayfaları artık çalışıyor
+
 NOT: Bu dosya her hata çözümünde güncellenecek! 
