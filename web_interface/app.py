@@ -54,13 +54,12 @@ def analyze():
         
         # Create prompt
         prompt = f"""
-        Ozan karakter profiline dayalı tasarım eleştirisi yap:
+        CreaCritic tasarım analizi yap:
         
         Brief: {brief_info}
         Tasarımcı Açıklaması: {design_statement}
         
-        Bu görseli analiz et ve Ozan stili eleştiri yap. Ozan bir tasarım eleştirmenidir, tasarımcı değil.
-        Eleştiride şunlara odaklan:
+        Bu görseli analiz et ve detaylı eleştiri yap. Eleştiride şunlara odaklan:
         - Okunabilirlik ve netlik
         - Marka kimliği uygunluğu
         - Estetik değerler
@@ -68,7 +67,7 @@ def analyze():
         - Piyasa standartları
         - İyileştirme önerileri
         
-        Ozan'ın tarzında, detaylı ve yapıcı bir eleştiri sun.
+        Detaylı ve yapıcı bir eleştiri sun.
         """
         
         # Generate response
