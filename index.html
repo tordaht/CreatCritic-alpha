@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreaCritic - Ozan Tasarım Eleştiri Sistemi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .features {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stat-item i {
+            font-size: 2rem;
+            color: #fff;
+        }
+        
+        .stat-item span {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .footer-info {
+            margin-bottom: 20px;
+        }
+        
+        .footer-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer-info p {
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        .ozan-note {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #667eea;
+            font-size: 0.85rem;
+            color: #ddd;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>CreaCritic</h1>
+            <p>Ozan Tasarım Eleştiri Sistemi - AI Destekli Tasarım Analizi</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Destekli</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Matematiksel Model</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Hızlı Analiz</span>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <a href="https://github.com/tordaht/CreatCritic-alpha" class="btn">
+                    <i class="fab fa-github"></i>
+                    GitHub'da İncele
+                </a>
+                <a href="https://github.com/tordaht/CreatCritic-alpha/blob/main/README.md" class="btn">
+                    <i class="fas fa-book"></i>
+                    Dokümantasyon
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: white; margin-bottom: 50px;">Özellikler</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Görsel Analiz</h3>
+                    <p>Google Gemini AI ile gelişmiş görsel tasarım analizi. PDF, PNG, JPG, GIF, BMP formatlarını destekler.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Ozan Üslubu</h3>
+                    <p>Matematiksel modelleme ile Ozan Bayar tarzı eleştiri. Kısa, aksiyon odaklı ve teknik detaylı yorumlar.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Onay Sistemi</h3>
+                    <p>Otomatik tasarım onay/revizyon/ret kararları. Utility function ile kalite değerlendirmesi.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Arayüzü</h3>
+                    <p>Modern Flask tabanlı web arayüzü. Responsive tasarım ve kullanıcı dostu arayüz.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>API Key Kaydetme</h3>
+                    <p>Otomatik localStorage kaydetme. Bir kez gir, her zaman kullan. Güvenli ve pratik.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Tasarım</h3>
+                    <p>Mobil uyumlu tasarım. Tüm cihazlarda mükemmel görünüm ve kullanım deneyimi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-info">
+                <h3>CreaCritic v1.1.1</h3>
+                <p>Seri No: CR-023-v1.1</p>
+                <p>Son Güncelleme: 16/07/2025</p>
+                <p>Geliştirici: Ozan Bayar</p>
+                
+                <div class="ozan-note">
+                    <i class="fas fa-user-tie"></i>
+                    Beezy Design Studio Creative Director'ü Ozan Bayar'ın davranış kalıplarına göre tasarım yorumlama aracı
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/tordaht/CreatCritic-alpha" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://github.com/tordaht/CreatCritic-alpha/blob/main/README.md" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                    <i class="fas fa-book"></i> README
+                </a>
+                <a href="https://github.com/tordaht/CreatCritic-alpha/blob/main/HATA%20ÇÖZÜMLERİ.txt" style="color: #ccc; text-decoration: none; margin: 0 10px;">
+                    <i class="fas fa-bug"></i> Hata Çözümleri
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add animation to feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add typing animation to hero title
+        const heroTitle = document.querySelector('.hero h1');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            // Start typing animation after 1 second
+            setTimeout(typeWriter, 1000);
+        }
+
+        console.log('CreaCritic GitHub Pages Yüklendi');
+        console.log('Seri No: CR-023-v1.1');
+    </script>
+</body>
+</html> 
