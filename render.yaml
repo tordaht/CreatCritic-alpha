@@ -3,7 +3,7 @@ services:
     name: creacritic
     env: python
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: cd web_interface && python app.py
+    startCommand: cd web_interface && gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.0 
