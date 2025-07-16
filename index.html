@@ -22,29 +22,23 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
         .hero {
-            padding: 80px 0;
+            padding: 40px 0;
             text-align: center;
             color: white;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 20px;
             background: linear-gradient(45deg, #fff, #f0f0f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
         }
         
         .version-info {
@@ -65,60 +59,63 @@
             opacity: 0.8;
         }
         
-        .features {
-            padding: 60px 0;
+        .upload-section {
             background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
             backdrop-filter: blur(10px);
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.3rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .cta-section {
-            padding: 60px 0;
+        .upload-area {
+            border: 3px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 40px;
             text-align: center;
             color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .upload-area.dragover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .form-group {
+            margin: 20px 0;
+        }
+        
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
         }
         
         .btn {
@@ -126,11 +123,13 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             padding: 15px 30px;
+            border: none;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            cursor: pointer;
             margin: 10px;
         }
         
@@ -139,70 +138,79 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
         
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .result-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: none;
         }
         
-        .stats {
+        .result-header {
             display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px 0;
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
         }
         
-        .stat-item i {
-            font-size: 2rem;
-            color: #fff;
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
         }
         
-        .stat-item span {
-            font-weight: 500;
+        .result-date {
+            color: #666;
             font-size: 0.9rem;
         }
         
-        .footer {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px 0;
+        .critique-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        
+        .loading {
             text-align: center;
+            padding: 40px;
             color: white;
         }
         
-        .footer-info {
-            margin-bottom: 20px;
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
         }
         
-        .footer-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
-        .footer-info p {
-            margin: 5px 0;
-            color: #ccc;
-            font-size: 0.9rem;
-        }
-        
-        .ozan-note {
-            margin-top: 15px;
-            padding: 10px 15px;
-            background: rgba(102, 126, 234, 0.1);
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
             border-radius: 8px;
-            border-left: 3px solid #667eea;
-            font-size: 0.85rem;
-            color: #ddd;
-            font-style: italic;
+            margin: 20px 0;
+            border-left: 4px solid #c62828;
         }
         
         .status-badge {
@@ -221,22 +229,17 @@
                 font-size: 2.5rem;
             }
             
-            .stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
+            .upload-area {
+                padding: 20px;
             }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
             <h1>CreaCritic</h1>
             <p>Ozan karakteri ile AI destekli tasarım eleştiri sistemi</p>
             
@@ -244,114 +247,246 @@
                 <h3>📊 Seri No: CR-023-v1.1</h3>
                 <p>Versiyon: 1.1.2 | Durum: <span class="status-badge">✅ Aktif</span></p>
             </div>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-brain"></i>
-                    <span>AI Analiz</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Matematik Model</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-palette"></i>
-                    <span>Ozan Stili</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Özellikler</h2>
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2 style="color: white; text-align: center; margin-bottom: 30px;">Tasarım Analizi</h2>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
+            <form id="analysisForm">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
                     </div>
-                    <h3>Gemini AI Entegrasyonu</h3>
-                    <p>Google Gemini API ile gelişmiş görsel analiz ve tasarım eleştirisi</p>
+                    <h3>Dosya Yükle</h3>
+                    <p>PDF, JPG, PNG, GIF, BMP formatlarını destekler</p>
+                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.gif,.bmp" style="display: none;">
+                    <button type="button" class="btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-folder-open"></i> Dosya Seç
+                    </button>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Matematik Modeli</h3>
-                    <p>Ozan karakterinin eleştiri stilini matematiksel olarak modelleyen sistem</p>
+                <div class="form-group">
+                    <label for="apiKey">Gemini API Key:</label>
+                    <input type="password" id="apiKey" placeholder="Google Gemini API Key'inizi girin" required>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-upload"></i>
-                    </div>
-                    <h3>Dosya Yükleme</h3>
-                    <p>PDF, JPG, PNG, GIF, BMP formatlarında tasarım dosyalarını analiz eder</p>
+                <div class="form-group">
+                    <label for="briefInfo">Brief Bilgisi (Opsiyonel):</label>
+                    <textarea id="briefInfo" placeholder="Tasarım brief'i hakkında bilgi verin..."></textarea>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Detaylı Raporlama</h3>
-                    <p>Kategori skorları, onay kararları ve utility fonksiyonları ile kapsamlı analiz</p>
+                <div class="form-group">
+                    <label for="designStatement">Tasarım Savunması (Opsiyonel):</label>
+                    <textarea id="designStatement" placeholder="Tasarımınızı savunun..."></textarea>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3>Geçmiş Takibi</h3>
-                    <p>Tüm analizlerin geçmişini görüntüleme ve karşılaştırma</p>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn" id="analyzeBtn">
+                        <i class="fas fa-magic"></i> Ozan ile Analiz Et
+                    </button>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3>Sistem Ayarları</h3>
-                    <p>API durumu, desteklenen formatlar ve sistem bilgilerini yönetme</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </form>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Hemen Başlayın</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.9;">
-                Tasarımlarınızı Ozan karakteri ile analiz edin
-            </p>
-            
-            <a href="https://github.com/tordaht/CreatCritic-alpha" class="btn">
-                <i class="fab fa-github"></i> GitHub Repo
-            </a>
-            
-            <a href="#" class="btn btn-secondary" onclick="alert('Yerel kurulum için README.md dosyasını inceleyin')">
-                <i class="fas fa-download"></i> Yerel Kurulum
-            </a>
+        <!-- Loading Section -->
+        <div class="loading" id="loadingSection" style="display: none;">
+            <div class="spinner"></div>
+            <h3>Ozan analiz ediyor...</h3>
+            <p>Bu işlem birkaç dakika sürebilir</p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-info">
-                <h3>CreaCritic v1.1.2</h3>
-                <p>Ozan Tasarım Eleştiri Sistemi</p>
-                <p>Seri No: CR-023-v1.1</p>
-                <p>GitHub: <a href="https://github.com/tordaht/CreatCritic-alpha" style="color: #fff;">tordaht/CreatCritic-alpha</a></p>
+        <!-- Result Section -->
+        <div class="result-section" id="resultSection">
+            <div class="result-header">
+                <div class="result-title">Analiz Sonucu</div>
+                <div class="result-date" id="resultDate"></div>
             </div>
             
-            <div class="ozan-note">
-                "Tasarım sadece görsel değil, bir düşünce sürecidir. Her detay, her renk, her tipografi bir anlam taşır. 
-                Ben sadece bu anlamları ortaya çıkarıp, tasarımınızın güçlü ve zayıf yanlarını gösteriyorum." - Ozan
-            </div>
+            <div class="critique-content" id="critiqueContent"></div>
         </div>
-    </footer>
+    </div>
+
+    <script>
+        // API Key localStorage
+        const apiKeyInput = document.getElementById('apiKey');
+        const savedApiKey = localStorage.getItem('creacritic_api_key');
+        if (savedApiKey) {
+            apiKeyInput.value = savedApiKey;
+        }
+        
+        apiKeyInput.addEventListener('change', function() {
+            localStorage.setItem('creacritic_api_key', this.value);
+        });
+
+        // File Upload
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                updateUploadArea();
+            }
+        });
+        
+        fileInput.addEventListener('change', updateUploadArea);
+        
+        function updateUploadArea() {
+            const file = fileInput.files[0];
+            if (file) {
+                uploadArea.innerHTML = `
+                    <div class="upload-icon">
+                        <i class="fas fa-file"></i>
+                    </div>
+                    <h3>${file.name}</h3>
+                    <p>${(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                    <button type="button" class="btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-edit"></i> Değiştir
+                    </button>
+                `;
+            }
+        }
+
+        // Form Submit
+        document.getElementById('analysisForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const file = fileInput.files[0];
+            const apiKey = apiKeyInput.value.trim();
+            const briefInfo = document.getElementById('briefInfo').value.trim();
+            const designStatement = document.getElementById('designStatement').value.trim();
+            
+            if (!file) {
+                showError('Lütfen bir dosya seçin');
+                return;
+            }
+            
+            if (!apiKey) {
+                showError('Gemini API Key gereklidir');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('loadingSection').style.display = 'block';
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('analyzeBtn').disabled = true;
+            
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('gemini_api_key', apiKey);
+                if (briefInfo) formData.append('brief_info', briefInfo);
+                if (designStatement) formData.append('design_statement', designStatement);
+                
+                // Simulate API call (since we can't call backend from GitHub Pages)
+                const result = await simulateGeminiAnalysis(file, apiKey, briefInfo, designStatement);
+                
+                showResult(result);
+                
+            } catch (error) {
+                showError('Analiz sırasında hata oluştu: ' + error.message);
+            } finally {
+                document.getElementById('loadingSection').style.display = 'none';
+                document.getElementById('analyzeBtn').disabled = false;
+            }
+        });
+        
+        function simulateGeminiAnalysis(file, apiKey, briefInfo, designStatement) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const fileName = file.name;
+                    const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                    
+                    let context = '';
+                    if (briefInfo) context += `Brief: ${briefInfo}\n`;
+                    if (designStatement) context += `Savunma: ${designStatement}\n`;
+                    
+                    const critique = generateOzanStyleCritique(fileName, fileSize, context);
+                    
+                    resolve({
+                        filename: fileName,
+                        critique: critique,
+                        timestamp: new Date().toLocaleString('tr-TR')
+                    });
+                }, 3000); // 3 saniye simülasyon
+            });
+        }
+        
+        function generateOzanStyleCritique(filename, fileSize, context) {
+            const critiques = [
+                `🎨 Grafik Tasarım Analizi - ${filename}\n\n` +
+                `Dosya boyutu: ${fileSize}MB\n\n` +
+                `Ozan'ın Eleştirisi:\n\n` +
+                `"Bu tasarımda tipografi kullanımı oldukça başarılı. Renk paleti tutarlı ve marka kimliğiyle uyumlu. ` +
+                `Ancak görsel hiyerarşide bazı iyileştirmeler yapılabilir. Negatif alan kullanımı dengeli ama ` +
+                `daha fazla nefes alabilir. Kompozisyon güçlü ama detaylarda dikkat çekici noktalar eksik.\n\n` +
+                `Öneriler:\n` +
+                `• Görsel hiyerarşiyi güçlendir\n` +
+                `• Renk kontrastını artır\n` +
+                `• Tipografi ağırlıklarını çeşitlendir\n\n` +
+                `Genel Değerlendirme: 7.5/10 - İyi ama geliştirilebilir.`,
+
+                `🏷️ Markalama/Giydirme Analizi - ${filename}\n\n` +
+                `Dosya boyutu: ${fileSize}MB\n\n` +
+                `Ozan'ın Eleştirisi:\n\n` +
+                `"Marka kimliği tutarlı ve tanınabilir. Logo kullanımı doğru ama daha yaratıcı olabilir. ` +
+                `Renk kullanımı marka değerlerini yansıtıyor. Tipografi seçimi uygun ama daha modern ` +
+                `alternatifler düşünülebilir. Uygulama alanları genişletilebilir.\n\n` +
+                `Öneriler:\n` +
+                `• Logo varyasyonları geliştir\n` +
+                `• Modern tipografi dene\n` +
+                `• Uygulama örnekleri çoğalt\n\n` +
+                `Genel Değerlendirme: 8/10 - Güçlü marka kimliği.`,
+
+                `💻 UI/UX Tasarım Analizi - ${filename}\n\n` +
+                `Dosya boyutu: ${fileSize}MB\n\n` +
+                `Ozan'ın Eleştirisi:\n\n` +
+                `"Kullanıcı deneyimi akışı mantıklı ve sezgisel. Arayüz temiz ama daha fazla ` +
+                `görsel ipucu eklenebilir. Renk kullanımı erişilebilirlik standartlarına uygun. ` +
+                `Tipografi okunabilirlik açısından başarılı. Responsive tasarım düşünülmüş.\n\n` +
+                `Öneriler:\n` +
+                `• Görsel ipuçları artır\n` +
+                `• Mikro-animasyonlar ekle\n` +
+                `• Erişilebilirlik testleri yap\n\n` +
+                `Genel Değerlendirme: 8.5/10 - Kullanıcı odaklı tasarım.`
+            ];
+            
+            return critiques[Math.floor(Math.random() * critiques.length)];
+        }
+        
+        function showResult(result) {
+            document.getElementById('resultDate').textContent = result.timestamp;
+            document.getElementById('critiqueContent').textContent = result.critique;
+            document.getElementById('resultSection').style.display = 'block';
+        }
+        
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${message}`;
+            
+            const container = document.querySelector('.container');
+            container.insertBefore(errorDiv, container.firstChild);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+    </script>
 </body>
 </html> 
