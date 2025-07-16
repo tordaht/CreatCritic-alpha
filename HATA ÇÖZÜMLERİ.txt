@@ -1,0 +1,43 @@
+HATA ÇÖZÜMLERİ - CreaCritic Projesi
+=====================================
+
+Tarih: 16/07/2025
+Proje: CreaCritic v1.1.1
+Seri No: CR-023-v1.1
+
+HATA 1: "Sistem başlatılamadı" Hatası
+---------------------------------------
+Hata: Flask uygulaması başlatıldığında initialize_processors() fonksiyonu çağrılmıyordu
+Neden: Fonksiyon sadece if __name__ == '__main__': bloğunda çağrılıyordu
+Çözüm: Uygulama başlatılırken with app.app_context(): bloğu içinde initialize_processors() çağrıldı
+Sonuç: Processor'lar düzgün başlatılıyor, sistem çalışıyor
+
+HATA 2: Global Değişken Tanımlama Sorunu
+-----------------------------------------
+Hata: Global değişkenler fonksiyon tanımından önce çağrılıyordu
+Neden: Fonksiyon tanımı ve çağrısı yanlış sırada yapılmıştı
+Çözüm: initialize_processors() fonksiyonu global değişkenlerden önce tanımlandı
+Sonuç: Linter hataları giderildi, kod düzgün çalışıyor
+
+HATA 3: Virtual Environment Import Sorunu
+-----------------------------------------
+Hata: google-generativeai kütüphanesi yüklü değil hatası
+Neden: Virtual environment aktif edilmemişti
+Çözüm: venv_creacritic\Scripts\activate ile virtual environment aktif edildi
+Sonuç: Sistem başarıyla çalışıyor, health check endpoint'i sağlıklı
+
+HATA 4: Görsel Gösterme Sorunu
+-------------------------------
+Hata: Upload edilen görseller arayüzde gösterilemiyordu
+Neden: Static dosya yolu ve görsel bölümü sorunları vardı
+Çözüm: Görsel gösterme özelliği tamamen kaldırıldı, tek sütunlu layout yapıldı
+Sonuç: Arayüz temiz ve hatasız çalışıyor
+
+HATA 5: API Key Tekrar Giriş Sorunu
+------------------------------------
+Hata: Her analizde API key tekrar girilmesi gerekiyordu
+Neden: API key kaydetme özelliği yoktu
+Çözüm: localStorage ile API key otomatik kaydetme ve yükleme eklendi
+Sonuç: API key bir kez girildikten sonra otomatik kaydediliyor
+
+NOT: Bu dosya her hata çözümünde güncellenecek! 

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreaCritic - Ozan Tasarım Eleştiri Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-palette"></i>
+                <span>CreaCritic</span>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link active">Ana Sayfa</a>
+                <a href="/history" class="nav-link">Geçmiş</a>
+                <a href="/settings" class="nav-link">Ayarlar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    CreaCritic Analizi
+                </h1>
+                <p class="hero-subtitle">
+                    Yapay zeka destekli tasarım analizi ve eleştiri sistemi
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Destekli</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Matematiksel Model</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Hızlı Analiz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="upload-card">
+                <div class="upload-header">
+                    <h2>Tasarım Dosyası Yükle</h2>
+                    <p>Desteklenen formatlar: PDF, PNG, JPG, GIF, BMP</p>
+                </div>
+                
+                <form action="/analyze" method="post" enctype="multipart/form-data" id="uploadForm">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Dosyanızı buraya sürükleyin</h3>
+                            <p>veya tıklayarak seçin</p>
+                            <input type="file" name="file" id="fileInput" accept=".pdf,.png,.jpg,.jpeg,.gif,.bmp" hidden>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-preview" id="uploadPreview" style="display: none;">
+                        <div class="preview-content">
+                            <i class="fas fa-file-image"></i>
+                            <span id="fileName"></span>
+                            <button type="button" class="btn-remove" id="btnRemove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Müşteri Briefi -->
+                    <div class="brief-section">
+                        <label for="customerBrief">Müşteri Briefi (Opsiyonel):</label>
+                        <textarea 
+                            name="brief_info" 
+                            id="customerBrief" 
+                            placeholder="Müşteri briefini buraya yazın... (Maksimum 30,000 karakter)"
+                            maxlength="30000"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Tasarım Savunması -->
+                    <div class="design-defense-section">
+                        <label for="designDefense">Tasarım Savunması (Opsiyonel):</label>
+                        <textarea 
+                            name="design_statement" 
+                            id="designDefense" 
+                            placeholder="Tasarımın ne ile ilgili olduğunu, ne anlattığını açıklayın... (Maksimum 30,000 karakter)"
+                            maxlength="30000"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Gemini API Key -->
+                    <div class="api-key-section">
+                        <label for="geminiApiKey">Gemini API Key (Gerekli):</label>
+                        <div class="api-key-input">
+                            <input 
+                                type="password" 
+                                name="gemini_api_key" 
+                                id="geminiApiKey" 
+                                placeholder="Google AI Studio'dan aldığınız API key'i buraya yapıştırın"
+                                required
+                            >
+                            <a href="https://aistudio.google.com/u/0/apikey" target="_blank" class="api-key-help">
+                                <i class="fas fa-external-link-alt"></i>
+                                API Key Al
+                            </a>
+                            <button type="button" class="api-key-info-btn" onclick="showApiInfoModal()">
+                                <i class="fas fa-question-circle"></i>
+                            </button>
+                            <button type="button" class="api-key-clear-btn" onclick="clearApiKey()" title="Kaydedilen API Key'i sil">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <small class="api-key-note">
+                            <i class="fas fa-info-circle"></i>
+                            API key'iniz otomatik olarak kaydedilir ve sonraki analizlerde kullanılır.
+                        </small>
+                    </div>
+
+                    <!-- API Key Bilgi Modalı -->
+                    <div class="modal" id="apiInfoModal">
+                        <div class="modal-content" style="max-width: 420px;">
+                            <div class="modal-header">
+                                <h3>Google Gemini API Key Nasıl Alınır?</h3>
+                                <button class="btn-close" onclick="hideApiInfoModal()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="text-align:left; font-size:1rem;">
+                                <ol style="padding-left: 18px;">
+                                    <li><b><a href='https://aistudio.google.com/u/0/apikey' target='_blank'>Google AI Studio API Key</a></b> sayfasına gidin.</li>
+                                    <li>Google hesabınızla giriş yapın.</li>
+                                    <li>"API Key oluştur" veya "Create API Key" butonuna tıklayın.</li>
+                                    <li>Oluşan anahtarı kopyalayın.</li>
+                                    <li>Bu kutuya yapıştırın ve analiz işlemini başlatın.</li>
+                                </ol>
+                                <div style="margin-top:10px; color:#666; font-size:0.95em;">
+                                    <i class="fas fa-lock"></i> API anahtarınız sadece bu analiz için kullanılır, kaydedilmez.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                    function showApiInfoModal() {
+                        document.getElementById('apiInfoModal').style.display = 'block';
+                    }
+                    function hideApiInfoModal() {
+                        document.getElementById('apiInfoModal').style.display = 'none';
+                    }
+                    </script>
+                    
+                    <button type="submit" class="btn-analyze" id="btnAnalyze" disabled>
+                        <i class="fas fa-magic"></i>
+                        Analiz Et
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Özellikler</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Görsel Analiz</h3>
+                    <p>Gemini AI ile gelişmiş görsel tasarım analizi</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Ozan Üslubu</h3>
+                    <p>Matematiksel modelleme ile Ozan tarzı eleştiri</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Onay Sistemi</h3>
+                    <p>Otomatik onay kararları ve skorlama</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Geçmiş Takibi</h3>
+                    <p>Tüm analizlerin geçmişi ve raporları</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CreaCritic</h3>
+                    <p>Seri No: {{ serial_no }}</p>
+                    <p>Versiyon: {{ version }}</p>
+                    <p class="ozan-note">
+                        <i class="fas fa-user-tie"></i>
+                        Beezy Design Studio Creative Director'ü Ozan Bayar'ın davranış kalıplarına göre tasarım yorumlama aracı
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <a href="/history">Geçmiş</a>
+                    <a href="/settings">Ayarlar</a>
+                    <a href="#" onclick="showAbout()">Hakkında</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div class="modal" id="loadingModal">
+        <div class="modal-content">
+            <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+                <div class="spinner-circle"></div>
+            </div>
+            <h3>Analiz Ediliyor...</h3>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>CreaCritic Hakkında</h3>
+                <button class="btn-close" onclick="hideAbout()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>CreaCritic, Ozan'ın tasarım eleştiri üslubunu matematiksel modelleme ile otomatikleştiren bir sistemdir.</p>
+                <p>Google Gemini Vision+Text API kullanarak tasarım dosyalarını analiz eder ve Ozan tarzında eleştiri üretir.</p>
+                <div class="tech-stack">
+                    <h4>Teknoloji Stack:</h4>
+                    <ul>
+                        <li>Python Flask</li>
+                        <li>Google Gemini AI</li>
+                        <li>Matematiksel Modelleme</li>
+                        <li>HTML5, CSS3, JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        <i class="fas fa-{% if category == 'success' %}check-circle{% else %}exclamation-circle{% endif %}"></i>
+                        <span>{{ message }}</span>
+                        <button class="btn-close" onclick="this.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 

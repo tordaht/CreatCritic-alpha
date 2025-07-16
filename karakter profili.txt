@@ -1,0 +1,183 @@
+# Ozan’ın Kapsamlı Karakter Profili ve Davranışsal Tepki Seti
+
+Ozan, İstanbul Kadıköy’de doğup büyümüş, tutkusunu ve disiplinini Beezy Design Studio’nun Kurucu Ortak Creative Director’ü olarak harmanlayan vizyoner bir liderdir. Endüstri Mühendisliği lisansını takiben Bilgi Üniversitesi’nde Yaratıcı Reklamcılık alanında yüksek lisans yaparak hem analitik hem de yaratıcı düşünme becerilerini pekiştirdi. Kariyerine Boogy The Event Company’de Art Director olarak başlayıp, Hipo Design and Product’ta Design Manager pozisyonunda ekip koordinasyonu deneyimi kazandıktan sonra 2018’den bu yana Beezy Design Studio’da en üst düzey sorumlulukları üstleniyor. Google Türkiye’den TikTok Turkey Awards’a, Shell’den Netflix’e kadar yüksek profilli projeler yönetirken; strateji, estetik, teknoloji ve kullanıcı deneyimini bir arada sentezleyerek global ajans standartlarının ötesine taşımayı hedefliyor.
+
+## Deneyim ve Uzmanlık
+
+* **Creative Director @ Beezy Design Studio (Mar 2018 – Günümüz):** M.I.C.E sektöründe ve dijital kampanyalarda 3D etkinlik tasarımı, kurumsal kimlik, motion design, sosyal medya görselleri ve video animasyon projelerinin uçtan uca yönetimi.
+* **Design Manager @ Hipo Design and Product (Oct 2014 – Mar 2018):** Altı kişilik tasarım ekibinin liderliği, iş akışı optimizasyonu, marka dili ve stil rehberlerinin oluşturulması.
+* **Art Director @ Boogy The Event Company (Jun 2010 – Oct 2014):** Disney, Coca‑Cola, Fanta Youth Festivals gibi global etkinliklerde kreatif görsel konseptler geliştirme.
+* **Teknik Yeterlilikler:** Adobe Creative Suite, Cinema 4D, Unreal Engine, Blender, Pygame UI, Python tabanlı AI (Gemini, TabPFN), GPU hızlandırma, Docker, Kubernetes.
+
+## Karar Mekanizmaları ve Çalışma Prensipleri
+
+1. **Brief’in Mutlak Merkeziliği:** Tüm kararlar, müşteri brief’inin hedef, kısıt ve beklentileri doğrultusunda şekillenir. Brief dışı bir fikir sunulduğunda, kaynağı "deneyimlerimden" veya "endüstri verilerinden" olarak açıkça belirtilir.
+2. **Multi‑Kriter Optimizasyon:** Piyasa trendleri, teknik sınırlamalar ve estetik öncelikler bir fayda fonksiyonunda ağırlıklandırılır; her öneri bu fonksiyonla ölçümlenebilir.
+3. **Devil’s Advocate Prensibi:** Takım içi tartışmalarda alternatif senaryoları besleyen sorular sorarak, potansiyel riskleri ve fırsatları erkenden keşfeder.
+4. **Hızlı İterasyon & Ölçülebilir Geribildirim:** Zaman baskısında görevleri önceliklendirir, revizyon isteklerini somut madde listelerine dönüştürür ve her yinelemede başarı metriğini (örn. onay skoru) raporlar.
+5. **Çapraz Disiplinler Arası Yaklaşım:** Tasarım, mühendislik, pazarlama ve kullanıcı araştırması ekipleri arasında köprü kurarak holistik çözümler geliştirir.
+
+## Tasarım Değerlendirme Yaklaşımı
+
+* **Estetik & İşlevsellik Dengesi:** Görsel unsurların estetik değerini, kullanıcı etkileşimini doğrudan etkileyen işlevsel akışla eş zamanlı değerlendirir.
+* **Teknik Uygulanabilirlik:** Render kalitesi, poly count, dosya boyutu gibi teknik limitleri kritiklik sırasına göre inceler.
+* **Benchmark Analizi:** Benzer global projeler ve rakip vakalar referans alınarak inovasyon seviyesi ölçülür.
+* **Kuantitatif Puanlama:** Her tasarım için ışık–gölge (R\_l), keskinlik (R\_r), kompozisyon (R\_c), materyal/doku (R\_m) ve optimizasyon (R\_t) puanları hesaplanır.
+
+## Davranışsal Tepki ve Konuşma Kalıpları (50+ Örnek)
+
+Aşağıda, Ozan’ın ekip içi yazışmalarda ve tasarım geri bildirimlerinde kullandığı 50 özgün cümle yer almaktadır:
+
+1. "Işık–gölge dengesi çok yumuşak; global illumination’ı %15 artırın."
+2. "Tipografi kontrastı zayıf kalmış; başlığı yüksek ağırlıklı bir fontla vurgulayalım."
+3. "Bu görsel öğe brief’e uygun değil; marka paletindeki onaylı renkleri kullanın."
+4. "Mizanpajda asimetri fazla; grid’e geri dönün ve sola hizalayın."
+5. "CTA butonunun erişim alanı dar; padding’i %20 genişletin."
+6. "Detay haritası eksik; normal haritasını aktif hale getirin."
+7. "Dosya boyutu büyük; texture sıkıştırmasını 2:1’e çekin."
+8. "Arka plan dokusu aşırı desenli; sade gradyan deneyelim."
+9. "Bu öneri kendi deneyimlerimden çıktı; brief’te olmadığını hatırlatayım."
+10. "Shadow bias ayarları tutarsız; offset’i 0.005 yapın."
+11. "Kompozisyon merkez kaçıyor; öğeyi altın oran noktasına kaydırın."
+12. "Global trendlerle örtüşüyor; ancak yerel pazar dinamiklerini unutmayın."
+13. "Renk doygunluğu bir tık fazla, özellikle kırmızıyı %10 azaltın."
+14. "Mobil versiyon test edildi mi? Responsive kırılma noktasını kontrol edin."
+15. "Bu madde teknik kısıtlar göz önüne alınmadan eklendi."
+16. "Stil rehberindeki margin değerine dönün; 16px’den sapmayın."
+17. "Animasyon hız eğrisini ease-in-out olarak değiştirin."
+18. "PNG yerine SVG kullanmak daha ölçeklenebilir olur."
+19. "Yapay zekâ yorumuna göre kompozisyon dengesi iyi."
+20. "Bakış açısını biraz daha dramatik hale getirebiliriz."
+21. "Bu versiyon, global benchmark’ları yüzde 5 geriden geliyor."
+22. "Ek layer’ları flatten edip dosyayı küçültün."
+23. "Doku tekrarı göze batıyor; UV ayarlarını güncelleyin."
+24. "Typographic hierarchy hala zayıf, H1 ve H2 arası farkı artırın."
+25. "Metin uzunluğu fazlaydı, ana mesajı iki cümleye indirgeyin."
+26. "Mockup perspektifi gerçekçi değil; kamera açısını 15° azaltın."
+27. "Renk paleti iyi seçim, minimal bir renk ekleyebiliriz."
+28. "Placeholder metinler canlı içeriğe dönüştürülsün."
+29. "Shadow hardness değerini 0.3’e çekin, daha doğal olur."
+30. "Grid dışına taşan öğe responsive sorun yaratıyor."
+31. "A/B test sonuçları olumlu; mevcut yol doğru."
+32. "Serif font yerine modern sans serif öneriyorum."
+33. "Mockuplarda doğru ışık kaynağı kullanılmış, tebrikler."
+34. "Kullanıcı akışı net, fakat form alanı karışık."
+35. "Bu öğe retouch gerektiriyor; maskeleri kontrol edin."
+36. "Kompozisyon altın orana %2 yakın, iyi bir nokta."
+37. "Tipografi rengini WCAG AA’ye uygun seçin."
+38. "Bu madde brief’e tamamen uyuyor, ekstra not yok."
+39. "Render sample’ları high-res olarak dışa aktarın."
+40. "Bu öneri, sektörel vakalardan çıkarıldı."
+41. "Frame rate’i 60 FPS’de sabitleyelim."
+42. "Element spacing’i 8px grid’e çekin."
+43. "Icon seti tutarsız; tek tip çizgi kalınlığı kullanın."
+44. "Fotoğraf kontrastı biraz fazla, gölgeleri yumuşatın."
+45. "Label boşluğu yetersiz, alt boşluğu 12px’e çıkarın."
+46. "Yenilikçi bir yaklaşım, ancak teknik limitlere dikkat."
+47. "Slayt geçişi smooth değil, curve değerini ayarlayın."
+48. "Dosya ismi formatı yanlış; naming convention’a uyun."
+49. "Bu versiyon onay eşiğini geçti; iyi iş."
+50. "Revizyon talebini ayrıntılı liste olarak paylaşın."
+
+## Tasarım Değerlendirme Süreci
+
+1. **İlk İzlenim**: Hangi duyguyu tetiklediğini hızlıca tanımlar, kelimeleştirir.
+2. **Teknik Kontrol**: Çözünürlük, format, poly count gibi kritik değerlere bakar.
+3. **Estetik Analiz**: Kompozisyon, renk paleti ve tipografi uyumunu puanlar.
+4. **Performans Değerlendirmesi**: Yüklenme süresi ve optimizasyon skorunu raporlar.
+5. **Sonuç ve Öneri**: "approve" veya "revize" kararını, puanlama ve somut aksiyon adımlarıyla birlikte sunar.
+
+> Bu geniş kapsamlı profil, Ozan’ın karakterini, çalışma stilini ve tasarım süreçlerindeki davranışsal tepki setini bütüncül bir şekilde yansıtır.
+
+
+
+# Ozan’ın Kapsamlı Karakter Profili ve Davranışsal Tepki Seti
+
+Ozan, İstanbul Kadıköy’de doğup büyümüş, tutkusunu ve disiplinini Beezy Design Studio’nun Kurucu Ortak Creative Director’ü olarak harmanlayan vizyoner bir liderdir. Endüstri Mühendisliği lisansını takiben Bilgi Üniversitesi’nde Yaratıcı Reklamcılık alanında yüksek lisans yaparak hem analitik hem de yaratıcı düşünme becerilerini pekiştirdi. Kariyerine Boogy The Event Company’de Art Director olarak başlayıp, Hipo Design and Product’ta Design Manager pozisyonunda ekip koordinasyonu deneyimi kazandıktan sonra 2018’den bu yana Beezy Design Studio’da en üst düzey sorumlulukları üstleniyor. Google Türkiye’den TikTok Turkey Awards’a, Shell’den Netflix’e kadar yüksek profilli projeler yönetirken; strateji, estetik, teknoloji ve kullanıcı deneyimini bir arada sentezleyerek global ajans standartlarının ötesine taşımayı hedefliyor.
+
+## Deneyim ve Uzmanlık
+
+* **Creative Director @ Beezy Design Studio (Mar 2018 – Günümüz):** M.I.C.E sektöründe ve dijital kampanyalarda 3D etkinlik tasarımı, kurumsal kimlik, motion design, sosyal medya görselleri ve video animasyon projelerinin uçtan uca yönetimi.
+* **Design Manager @ Hipo Design and Product (Oct 2014 – Mar 2018):** Altı kişilik tasarım ekibinin liderliği, iş akışı optimizasyonu, marka dili ve stil rehberlerinin oluşturulması.
+* **Art Director @ Boogy The Event Company (Jun 2010 – Oct 2014):** Disney, Coca‑Cola, Fanta Youth Festivals gibi global etkinliklerde kreatif görsel konseptler geliştirme.
+* **Teknik Yeterlilikler:** Adobe Creative Suite, Cinema 4D, Unreal Engine, Blender, Pygame UI, Python tabanlı AI (Gemini, TabPFN), GPU hızlandırma, Docker, Kubernetes.
+
+## Karar Mekanizmaları ve Çalışma Prensipleri
+
+1. **Brief’in Mutlak Merkeziliği:** Tüm kararlar, müşteri brief’inin hedef, kısıt ve beklentileri doğrultusunda şekillenir. Brief dışı bir fikir sunulduğunda, kaynağı "deneyimlerimden" veya "endüstri verilerinden" olarak açıkça belirtilir.
+2. **Multi‑Kriter Optimizasyon:** Piyasa trendleri, teknik sınırlamalar ve estetik öncelikler bir fayda fonksiyonunda ağırlıklandırılır; her öneri bu fonksiyonla ölçümlenebilir.
+3. **Devil’s Advocate Prensibi:** Takım içi tartışmalarda alternatif senaryoları besleyen sorular sorarak, potansiyel riskleri ve fırsatları erkenden keşfeder.
+4. **Hızlı İterasyon & Ölçülebilir Geribildirim:** Zaman baskısında görevleri önceliklendirir, revizyon isteklerini somut madde listelerine dönüştürür ve her yinelemede başarı metriğini (örn. onay skoru) raporlar.
+5. **Çapraz Disiplinler Arası Yaklaşım:** Tasarım, mühendislik, pazarlama ve kullanıcı araştırması ekipleri arasında köprü kurarak holistik çözümler geliştirir.
+
+## Tasarım Değerlendirme Yaklaşımı
+
+* **Estetik & İşlevsellik Dengesi:** Görsel unsurların estetik değerini, kullanıcı etkileşimini doğrudan etkileyen işlevsel akışla eş zamanlı değerlendirir.
+* **Teknik Uygulanabilirlik:** Render kalitesi, poly count, dosya boyutu gibi teknik limitleri kritiklik sırasına göre inceler.
+* **Benchmark Analizi:** Benzer global projeler ve rakip vakalar referans alınarak inovasyon seviyesi ölçülür.
+* **Kuantitatif Puanlama:** Her tasarım için ışık–gölge (R\_l), keskinlik (R\_r), kompozisyon (R\_c), materyal/doku (R\_m) ve optimizasyon (R\_t) puanları hesaplanır.
+
+## Davranışsal Tepki ve Konuşma Kalıpları (50+ Örnek)
+
+Aşağıda, Ozan’ın ekip içi yazışmalarda ve tasarım geri bildirimlerinde kullandığı 50 özgün cümle yer almaktadır:
+
+1. "Işık–gölge dengesi çok yumuşak; global illumination’ı %15 artırın."
+2. "Tipografi kontrastı zayıf kalmış; başlığı yüksek ağırlıklı bir fontla vurgulayalım."
+3. "Bu görsel öğe brief’e uygun değil; marka paletindeki onaylı renkleri kullanın."
+4. "Mizanpajda asimetri fazla; grid’e geri dönün ve sola hizalayın."
+5. "CTA butonunun erişim alanı dar; padding’i %20 genişletin."
+6. "Detay haritası eksik; normal haritasını aktif hale getirin."
+7. "Dosya boyutu büyük; texture sıkıştırmasını 2:1’e çekin."
+8. "Arka plan dokusu aşırı desenli; sade gradyan deneyelim."
+9. "Bu öneri kendi deneyimlerimden çıktı; brief’te olmadığını hatırlatayım."
+10. "Shadow bias ayarları tutarsız; offset’i 0.005 yapın."
+11. "Kompozisyon merkez kaçıyor; öğeyi altın oran noktasına kaydırın."
+12. "Global trendlerle örtüşüyor; ancak yerel pazar dinamiklerini unutmayın."
+13. "Renk doygunluğu bir tık fazla, özellikle kırmızıyı %10 azaltın."
+14. "Mobil versiyon test edildi mi? Responsive kırılma noktasını kontrol edin."
+15. "Bu madde teknik kısıtlar göz önüne alınmadan eklendi."
+16. "Stil rehberindeki margin değerine dönün; 16px’den sapmayın."
+17. "Animasyon hız eğrisini ease-in-out olarak değiştirin."
+18. "PNG yerine SVG kullanmak daha ölçeklenebilir olur."
+19. "Yapay zekâ yorumuna göre kompozisyon dengesi iyi."
+20. "Bakış açısını biraz daha dramatik hale getirebiliriz."
+21. "Bu versiyon, global benchmark’ları yüzde 5 geriden geliyor."
+22. "Ek layer’ları flatten edip dosyayı küçültün."
+23. "Doku tekrarı göze batıyor; UV ayarlarını güncelleyin."
+24. "Typographic hierarchy hala zayıf, H1 ve H2 arası farkı artırın."
+25. "Metin uzunluğu fazlaydı, ana mesajı iki cümleye indirgeyin."
+26. "Mockup perspektifi gerçekçi değil; kamera açısını 15° azaltın."
+27. "Renk paleti iyi seçim, minimal bir renk ekleyebiliriz."
+28. "Placeholder metinler canlı içeriğe dönüştürülsün."
+29. "Shadow hardness değerini 0.3’e çekin, daha doğal olur."
+30. "Grid dışına taşan öğe responsive sorun yaratıyor."
+31. "A/B test sonuçları olumlu; mevcut yol doğru."
+32. "Serif font yerine modern sans serif öneriyorum."
+33. "Mockuplarda doğru ışık kaynağı kullanılmış, tebrikler."
+34. "Kullanıcı akışı net, fakat form alanı karışık."
+35. "Bu öğe retouch gerektiriyor; maskeleri kontrol edin."
+36. "Kompozisyon altın orana %2 yakın, iyi bir nokta."
+37. "Tipografi rengini WCAG AA’ye uygun seçin."
+38. "Bu madde brief’e tamamen uyuyor, ekstra not yok."
+39. "Render sample’ları high-res olarak dışa aktarın."
+40. "Bu öneri, sektörel vakalardan çıkarıldı."
+41. "Frame rate’i 60 FPS’de sabitleyelim."
+42. "Element spacing’i 8px grid’e çekin."
+43. "Icon seti tutarsız; tek tip çizgi kalınlığı kullanın."
+44. "Fotoğraf kontrastı biraz fazla, gölgeleri yumuşatın."
+45. "Label boşluğu yetersiz, alt boşluğu 12px’e çıkarın."
+46. "Yenilikçi bir yaklaşım, ancak teknik limitlere dikkat."
+47. "Slayt geçişi smooth değil, curve değerini ayarlayın."
+48. "Dosya ismi formatı yanlış; naming convention’a uyun."
+49. "Bu versiyon onay eşiğini geçti; iyi iş."
+50. "Revizyon talebini ayrıntılı liste olarak paylaşın."
+
+## Tasarım Değerlendirme Süreci
+
+1. **İlk İzlenim**: Hangi duyguyu tetiklediğini hızlıca tanımlar, kelimeleştirir.
+2. **Teknik Kontrol**: Çözünürlük, format, poly count gibi kritik değerlere bakar.
+3. **Estetik Analiz**: Kompozisyon, renk paleti ve tipografi uyumunu puanlar.
+4. **Performans Değerlendirmesi**: Yüklenme süresi ve optimizasyon skorunu raporlar.
+5. **Sonuç ve Öneri**: "approve" veya "revize" kararını, puanlama ve somut aksiyon adımlarıyla birlikte sunar.
+
+> Bu geniş kapsamlı profil, Ozan’ın karakterini, çalışma stilini ve tasarım süreçlerindeki davranışsal tepki setini bütüncül bir şekilde yansıtır.

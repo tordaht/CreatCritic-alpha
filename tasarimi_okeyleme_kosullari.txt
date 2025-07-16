@@ -1,0 +1,106 @@
+## Onay Mekanizması için Matematiksel Model ve Tepki Kuralları
+
+### 1. Onay Kriterlerinin Tanımlanması
+
+Tasarımın onaylanması için üç ana ölçüt belirlenmiştir:
+
+1. **Piyasa Standartlarına Uygunluk (M)**
+
+   * Endüstri benchmarklarına dayalı kalite metr ricidir.
+2. **Takım Kalitesi (T)**
+
+   * Deneyimli bir tasarımcı ekibi tarafından yapılmış izlenimini veren özellikler.
+3. **Estetik ve İşlevsellik Dengesi (E)**
+
+   * Görsel çekicilik ile kullanım kolaylığının bileşkesi.
+
+Her bir kriter için skor tanımı:
+
+* $M, T, E \in [0,1]$
+* 0: kriteri hiçbir şekilde karşılamıyor.
+* 1: kriteri mükemmel karşılıyor.
+
+### 2. Ağırlıklandırma ve Toplam Onay Fonksiyonu
+
+Kullanılacak ağırlıklar:
+$w_M = 0.4, \quad w_T = 0.35, \quad w_E = 0.25$
+
+Toplam onay skoru (Approval Score) fonksiyonu:
+
+$$
+A = w_M \cdot M + w_T \cdot T + w_E \cdot E
+$$
+
+Örnek: $M=0.8, T=0.9, E=0.7$ için
+$A = 0.4\times0.8 + 0.35\times0.9 + 0.25\times0.7 = 0.815$
+
+### 3. Uzayda Onay Bölgesi
+
+Tasarım kararlarını $\mathbf{d}=(M,T,E)$ vektörü ile temsil edersek, onaylanma bölgesi:
+
+$$
+\mathcal{A} = \{\mathbf{d} \in [0,1]^3 : A(\mathbf{d}) \ge \tau\}
+$$
+
+Burada $\tau$ onay eşiğidir. Örnek $\tau=0.75$.
+
+### 4. Onay Tepkisi (Discrete Event)
+
+Yapay zeka onay kararı:
+
+$$
+\mathrm{approve}(\mathbf{d}) =
+\begin{cases}
+1 & \text{eğer } A(\mathbf{d}) \ge \tau,\\
+0 & \text{aksi halde.}
+\end{cases}
+$$
+
+### 5. Çok Boyutlu Uzayda Modelleme
+
+Onay sürecini daha detaylandırmak için 5 boyutlu bir uzay tanımlayabiliriz:
+
+$$
+\mathbf{x} = (x_1, x_2, x_3, x_4, x_5)
+= (M, T, E, R, C)
+$$
+
+* $R$: Revizyon notu içeriği ($0$ - hiç, $1$ - çok)
+* $C$: Canvas/kompleksite skoru ($0$ - basit, $1$ - çok karmaşık)
+
+Genelleştirilmiş onay fonksiyonu:
+
+$$
+A(\mathbf{x}) = \sum_{i=1}^5 w_i x_i, \quad \sum_i w_i =1
+$$
+
+Örnek ağırlıklar:
+$w = (0.3, 0.25, 0.2, 0.15, 0.1)$
+
+### 6. Onay için Karar Ağacı Yaklaşımı
+
+1. Eğer $M < 0.6$, doğrudan ret.
+2. Aksi halde eğer $T < 0.7$, ret.
+3. Değilse eğer $E < 0.65$, revizyon taleb et.
+4. Hepsi geçerse onayla.
+
+Bu karar ağacı, $M,T,E$ değerlerinin kombinasyonuna göre hızlı discrete karar verir.
+
+### 7. Çizge Tabanlı Karar Modeli
+
+Tasarım parçalarını düğümler, kriterleri kenarlar olarak düşünürsek:
+
+* Düğüm $v_i$: tasarım bileşeni.
+* Kenar ağırlığı $w_{ij}$: bileşenler arası etkileşim gücü.
+
+Onay skoru, komşuluk matrisi $W$ ile:
+
+$$
+A = \mathbf{1}^T W \mathbf{x},
+$$
+
+burada $\mathbf{x}$ kriter vektörü.
+
+---
+
+Bu matematiksel model, tasarımın onay sürecini hem skora dayalı hem karar ağacı hem de çizge tabanlı olarak tanımlar. Onay eşiği $\tau$ ve ağırlıklar ihtiyaca göre ayarlanabilir.

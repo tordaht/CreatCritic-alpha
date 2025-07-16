@@ -1,0 +1,89 @@
+# Render Analiz ve Yorum Şablonu
+
+Aşağıda, bir render görselini Google Gemini API ile analiz edecek ve Ozan’ın tasarım davranış kalıplarına uygun biçimde yorumlayacak, puanlandıracak bir şablon yer almaktadır.
+
+---
+
+## 1. Ön İşlem ve Anlama
+
+1. **Görsel Amacı Tanıma**
+
+   * Görselin neyi temsil ettiği: ürün, mekan, karakter vs.
+   * Kullanım bağlamı: reklam, portfolyo, sunum.
+2. **Teknik Bilgi Çıkartma**
+
+   * Çözünürlük, format, dosya boyutu.
+   * Render motoru bilgisi (varsa EXR, Arnold, V-Ray vs.).
+
+---
+
+## 2. Özellik Vektörü $\mathbf{x}$ Tanımı
+
+Her render için beş ana özellik çıkarılır ve $[0,1]$ aralığına normalize edilir:
+
+| Özellik                       | Tanım                                                         | Notasyon | Aralık |
+| ----------------------------- | ------------------------------------------------------------- | -------- | ------ |
+| $R_l$ Işık–Gölge Kalitesi     | Işıklandırma, gölge detayları ve global illumination kalitesi | R\_l     | \[0,1] |
+| $R_r$ Render Keskinliği       | Detay netliği, anti-aliasing ve texture çözünürlüğü           | R\_r     | \[0,1] |
+| $R_c$ Kompozisyon             | Görsel hiyerarşi, odak noktası yönetimi                       | R\_c     | \[0,1] |
+| $R_m$ Materyal & Doku         | Yüzey materyalleri, doku gerçekçiliği                         | R\_m     | \[0,1] |
+| $R_t$ Teknik Uygulanabilirlik | Dosya boyutu, poly count, optimizasyon seviyesi               | R\_t     | \[0,1] |
+
+Özellik vektörü:
+
+$$
+\mathbf{R} = (R_l, R_r, R_c, R_m, R_t)
+$$
+
+---
+
+## 3. Fayda (Puan) Fonksiyonu
+
+Özelliklerin ağırlıklı toplamı ile genel puan hesaplanır:
+
+$$
+P(\mathbf{R}) = \sum_{i \in \{l,r,c,m,t\}} w_i R_i
+$$
+
+Örnek ağırlıklar:
+
+* $w_l=0.25$, $w_r=0.20$, $w_c=0.20$, $w_m=0.25$, $w_t=0.10$
+
+---
+
+## 4. Karar Verme Eşiği
+
+Render onayı için eşik $\tau=0.75$ olarak belirlenmiştir.
+
+$$
+\mathrm{approve}(\mathbf{R}) = \begin{cases}
+1 & P(\mathbf{R}) \ge \tau,\\
+0 & P(\mathbf{R}) < \tau
+\end{cases}
+$$
+
+---
+
+## 5. Yorum Formatı (Ozan Üslubu)
+
+Yorumlar, Ozan’ın davranış kalıplarından türetilen madde bazlı, fiil–nesne formatında olmalı.
+
+1. **Işıklandırma**: "Işık–gölge dengesi zayıf; global illumination seviyesini %20 artırın."
+2. **Keskinlik**: "Render detayları yumuşak; anti-aliasing örnek sayısını iki katına çıkarın."
+3. **Kompozisyon**: "Odak noktası belirsiz; üçüncü bölge kuralını uygulayarak nesneyi sola kaydırın."
+4. **Materyal**: "Yüzey dokusu düz; pürüz haritasını kullanarak detaylandırın."
+5. **Teknik**: "Poly count fazla; LOD seviyelerini optimize edin."
+
+---
+
+## 6. Uygulama Akışı
+
+1. Görsel Dropbox’a düşer.
+2. `gemini_processor` ile özellikler çıkarılır.
+3. `mathematical_model` ile $\mathbf{R}$ vektörü hesaplanır.
+4. `ozan_style_engine` ile yorumlar üretir.
+5. `slack_notifier` ile sonuç raporu paylaşılır.
+
+---
+
+Bu şablon, render analiz ve puanlamasını hem matematiksel hem de Ozan’ın tasarım yaklaşımıyla birleştirir.

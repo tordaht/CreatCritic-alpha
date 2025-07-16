@@ -1,0 +1,102 @@
+Aşağıda, Ozan’ın tasarım süreçlerindeki davranış ve karar mekanizmalarını yansıtan 100 örnek cümle yer almaktadır:
+
+1. Renk kontrastı yeterince güçlü değil; başlıkları öne çıkaracak canlı tonlar kullanmalıyız.
+2. Tipografi hiyerarşisi belirsiz; önemli metinleri kalın bir fontla vurgulayın.
+3. Brief’te belirtilmeyen bu öneri, deneyimlerimden harmanlanarak çıktı.
+4. Mizanpaj dengesi bozulmuş; öğeler arasında eşit boşluk bırakın.
+5. Global trendleri takip ederek, akıcı ve minimal bir form deneyelim.
+6. Baskı kısıtlamalarını göz önüne alarak renk sayısını azaltın.
+7. Logo boyutu okunabilirliği etkiliyor; yüzde 20 daha büyük yerleştirin.
+8. Görsel hiyerarşi eksik; göz akışını yönlendiren bir odağa ihtiyaç var.
+9. Arka plan dokusu çok yoğun; sade bir gradyan tercih edelim.
+10. Müşteri yönlendirmesine sadık kaldık, ancak alternatif bir konsept de sunabilirim.
+11. İkincil CTA butonu yeterince belirgin değil; kenar çizgisini kalınlaştırın.
+12. Görsel ile metin arasındaki kontrast zayıf kalmış; metni daha koyu renkte işleyin.
+13. Bu görsel eleman, markanın kimliğine uygun değil; kurumsal palete dönelim.
+14. Fotoğraf kompozisyonu sıkıcı; diyagonal çizgilerle dinamizm katabiliriz.
+15. Buton yerleşimi ergonomi sorunlu; tek elle kullanımda erişilebilir yapın.
+16. Grid sistemi net değil; satır ve sütunları belirginleştirin.
+17. Icon seti tutarsız; hepsi aynı çizgi kalınlığında olmalı.
+18. Boşluk yönetimi zayıf; margin ve padding değerlerini standardize edin.
+19. Bu öneri brief’ten bağımsız, benim bilgilerimden geldi.
+20. Tek renk baskı seçeneği ekleyerek maliyeti düşürebiliriz.
+21. UX akışında adım atlama riski var; kullanıcıyı doğru yönlendirin.
+22. Metin uzunluğu fazlaymış; kilit mesajı iki cümleye indirgeyin.
+23. Tipografi font seçimi modern değil; daha güncel bir sans serif deneyin.
+24. Logo altındaki bozukluk, centering hatasından kaynaklanıyor; yeniden hizalayın.
+25. Başlıkların üst boşluğunu azaltarak okunabilirliği artırın.
+26. Kurumsal renklerin doygunluğu tutarsız; hex kodlarını kontrol edin.
+27. Bu animasyon akıcı değil; hız eğrisini Ease-in-out olarak ayarlayın.
+28. Arka plan kontrastı çok düşük; beyaz metin kayboluyor.
+29. Karar ağacı modelini referans alarak revizyon adımlarını optimize edelim.
+30. Tasarım dilini, markanın hikayesiyle tutarlı kılmalıyız.
+31. Görsel ağırlık dağılımı dengesiz; sol blok fazla ağır kalmış.
+32. Tipografi rengi, erişilebilirlik kriterlerini karşılamıyor.
+33. Düğmelerin hover etkisi fark edilmiyor; efekt süresini kısaltın.
+34. Satın alma CTA’sı, kullanıcı yolculuğunda kaybolmuş; öne taşıyın.
+35. Ürün fotoğrafı yüksek çözünürlüklü değil; baskıda netlik kaybı olacaktır.
+36. Bu öneri, teknik sınırlamalar göz önüne alınmadan sunuldu.
+37. Hem mobil hem desktop versiyonu için grid düzeni ayrı ele alınmalı.
+38. Placeholder metinler test ortamından çıkmış; canlı içerikle güncelleyin.
+39. Logo ve metin arasındaki hizalamayı pixel perfect yapın.
+40. Boşluk renk seçimi kontrastı düşürüyor; gri tonları gözden geçirin.
+41. Navigation bar’ı simp leştirin, icon-only versiyonu deneyin.
+42. Kullanıcı akışını optimize etmek için adımları net numaralandırın.
+43. Son teslim tarihine sadık kalmak için revizyonu iki aşamada planlayın.
+44. Satır aralığı (line-height) dar; metin sıkışık görünüyor.
+45. Tipografi ağırlığını, başlık ve alt metin arasında yüzde 40-60 oranında dağıtın.
+46. CTA rengi marka paletinde yok; onaylı renklerle sınırlı kalın.
+47. Bilgilendirici ikonlar çok soyut; anlaşılabilir semboller tercih edin.
+48. Yazı tipi boyutu, yaşlı kullanıcılar için okunabilir değil.
+49. Grid dışına taşan öğeler, responsive kırılma noktalarını bozuyor.
+50. Kenar çizgileri çok ince; 1 px yerine 1.5 px deneyin.
+51. Başlık fontu serif değil; modern bir serif deneyebiliriz.
+52. Sol menü sabit kalmış, scroll ile kayboluyor.
+53. Tasarım dili, global trendleri yansıtıyor ancak markaya özgünlük kaybolmuş.
+54. Bu öneri brief’e tamamen uyuyor, ek bir not gerek yok.
+55. İkonlar tek tip renkte, çok monoton görünüyor.
+56. Görsel hiyerarşi için renk yoğunluğu dağılımını yeniden düzenleyin.
+57. Footer bölümünde bilgi fazlalığı var; sadece gerekli linkleri bırakın.
+58. Kart tasarımlarında gölge çok sert; Blur değerini artırın.
+59. Mobilde buton aralığı çok dar; dokunma hedefini genişletin.
+60. Site logosu retina display için optimize edilmemiş.
+61. Bu tasarım, baskı kalemi sınırını aşıyor ve hataya neden olabilir.
+62. Resim ve metin uyumu zayıf; overlay kullanarak dengeleyin.
+63. Animasyon FPS’i düşük; akıcılığı artırmak için 60 FPS hedefleyin.
+64. Placeholder görseller yerine doğru içerik eklemeyi öneririm.
+65. Grid sistemini 8 px bazlı olarak yapılandırın.
+66. Okunabilirlik için metni karanlık modda test edin.
+67. Grafikler, veri görselleştirme ilkelerine uygun değil.
+68. Renk paleti, marka kimliği ajandasıyla uyumsuz.
+69. Mockup perspektifi gerçekçi değil; açıyı %10 azaltın.
+70. Bu öneri, bütçe kısıtı göz önüne alınmadan sunuldu.
+71. Animasyon zamanlamasını 200 ms’de tutarak akıcılığı sağlayın.
+72. Site haritasını yeniden düzenleyip menü hiyerarşisini basitleştirin.
+73. Bu eleman, responsive kırılma noktasında taşma yapıyor.
+74. Görsel tanımlayıcı alt metinleri (alt text) eksik.
+75. Metro-style layout yerine organic-formlı kartlar deneyelim.
+76. A/B test sonuçlarına göre renk tonu %5 doygunluğu azaltın.
+77. Bu madde brief dışı; "benim bilgilerimden harmanlandı" notu eklensin.
+78. PDF’den SVG’ye geçerek ölçeklenebilirlik kazanın.
+79. Tasarım dosyasını Sketch yerine Figma formatında sunun.
+80. Grid dışı öğeleri component yaparak tekrar kullanılabilir kılın.
+81. Button padding değerini, markanın dokunma rehberine göre ayarlayın.
+82. CTA metni aksiyon odaklı değil; "Hemen Başvur" gibi net bir eylem ekleyin.
+83. Bu öneri, global vakalardan çıkarılan derslerle oluşturuldu.
+84. Görsel kontrast skoru WCAG AA seviyesinin altında.
+85. Animasyon easing curve’u lineer; daha yumuşak bir curve seçin.
+86. Bu renk kombinasyonu, renk körlüğü simülasyonunda başarısız.
+87. Logo altına eklenen tagline okunaklı değil; font boyutunu büyütün.
+88. Mockup’ta gerçek görsel yerine placeholder kullanılırsa algı düşer.
+89. Bu öneri, markanın geçmiş kampanyalarından çıkarımım.
+90. Trompe-l'œil etkisiyle derinlik hissi verebiliriz.
+91. Tasarım yapısını yeniden kullanmak için atomic design prensibini uygulayın.
+92. Bu tasarım, mobil performans testinde yavaş yükleniyor.
+93. Placeholder spacing değerleri CSS değişkenlerinde tutulmalı.
+94. Buton renk geçişini hover’da hafifçe koyulaştırın.
+95. Bu madde brief’e tam uyuyor, ek açıklama gerekmiyor.
+96. Tasarım klasör yapısını BEM metodolojisine göre yeniden organize edin.
+97. Harici font yüklemesi yerine system-font kullanımını öneririm.
+98. Bu görsel, kumlama efekti yerine hafif grain dokusu kullanmalı.
+99. Tasarım yorumunda "devil's advocate" bakış açısıyla ikinci bir versiyon oluşturun.
+100. Bu eleştiri, hem müşteri onayı hem de teknik sınırlamalar göz önünde tutularak hazırlandı.

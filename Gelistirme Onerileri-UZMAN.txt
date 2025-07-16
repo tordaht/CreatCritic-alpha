@@ -1,0 +1,44 @@
+1. dropbox_watcher.py 
+Kuyruk Kullanımı Eksik: Dosyaları eş zamanlı işleyecek bir kuyruğa (Celery/SQS) yönlendirmediğiniz için yüksek hacimde bekleyen istekler bloklanabilir.
+
+State Persistence: processed_files set’i bellekte tutuluyor; uygulama yeniden başlatıldığında kaybolur. Kalıcı bir izleme (DB veya dosya tabanlı) ekleyin.
+
+Exception Handling: _process_file içinde tüm hatalar tek düzeyde yakalanıyor. Hata bağlamına göre ErrorHandler’ı devreye alarak yeniden deneme mantığını entegre edin.
+
+Path Yönetimi: file_path = f"{self.inbox_path}{filename}" yerine os.path.join kullanarak platform bağımsızlık sağlayın.
+
+2. error_handler.py 
+Dosya Kilitleme Riski: Aynı anda birden fazla süreç HATA ÇÖZÜMLERİ.txt dosyasına yazarsa yarış durumu yaşanabilir. Yazma işlemlerine kilit (threading.Lock veya fcntl) ekleyin.
+
+Yeniden Deneme Zamanlaması: retry_operation’da denemeler arasında gecikme yok; birbirini hemen takip eden çoklu hatalar aşırı kaynak tüketir. Exponential back‑off ekleyin.
+
+Logger İkiliği: Hem logging.FileHandler hem de manuel dosya yazımı benzer içeriği saklıyor. Tek bir sorumluluk ilkesine göre, dosya yazımını sadece logger üzerinden yönetmeyi düşünün.
+
+3. gemini_processor.py 
+Büyük Görsel Bellek Maliyeti: PDF sayfalarını 2× zoom ile tamamen belleğe yüklemek, büyük dosyalarda OOM riski yaratır. Sayfa başına işlem ve temp disk kullanımı ekleyin.
+
+Prompt Dinamikliği: Prompt doğrudan generate_prompt_for_gemini’den geliyor; dosya içeriğine göre (ör. PDF sayfa sayısı) varyasyon ekleyerek her sayfaya özgü yorum almayı düşünün.
+
+Error Granularity: process_design_file tüm hatayı genel Exception ile sarıyor. Hangi aşamada (PDF, API, parsing) hata oluştuğunu tutan özel Exception sınıfları oluşturun.
+
+4. mathematical_model.py 
+Sabit Ağırlıklar: MATHEMATICAL_WEIGHTS dışarıdan sabit geliyor; çalışan sistemden edinilen geri bildirimle (onay/ret) periodic güncelleme ekleyerek ağırlıkları adaptif hale getirin.
+
+Keyword Skoru: Her anahtar kelimeye sabit 0.2 puan veriliyor; metin uzunluğu veya tekrar sayısı hesaba katılmıyor. TF‑IDF benzeri ağırlıklı metriklerle skoru zenginleştirin.
+
+Optimize İşlem Basitliği: optimize_critique yalnızca en düşük faktörü arttırıyor. Çok boyutlu gradyan (veya Adam optimizasyonu) ile tüm faktörleri eş zamanlı iyileştirmek daha etkili olabilir.
+
+5. ozan_style_engine.py 
+Fiil‑Nesne Kalıpları: action_patterns ve design_elements listeleri statik; güncel trendlere göre düzenli güncelleme ya da dışarıdan konfigürasyonla zenginleştirme önerilir.
+
+JSON Parse Güvenliği: _parse_gemini_response JSON parse hatasında fallback yapıyor, ancak malformed JSON’da silent kayıp olabilir. Invalid format uyarısı/log ekleyin.
+
+Kelimeli Kısaltma: 10 kelime limiti bazı açıklamaları eksik bırakabilir. Dinamik kısaltma veya “…” ekleyerek orijinal bağlamı korumayı düşünün.
+
+6. slack_notifier.py 
+Async İstemci: Slack SDK blocking kullanımı uzun bildirimlerde akış bloğu yaratabilir. asyncio destekli WebClient ile non‑blocking bildirim önerilir.
+
+Retry Policy: send_notification başarısız olursa otomatik yeniden deneme yok. ErrorHandler.retry_operation ile retry mekanizması ekleyin.
+
+Mesaj Şablonu Validasyonu: SLACK_MESSAGE_TEMPLATE hatalı formatta gelirse format() çağrısı crash yaratır. Template şablonunu uygulamadan önce validate edin.
+

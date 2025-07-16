@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiz Sonucu - CreaCritic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .result-container {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .result-layout {
+            display: block;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .result-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+
+        
+        .result-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .result-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .result-subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .critique-section {
+            margin: 30px 0;
+        }
+        
+        .critique-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .critique-content {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+        
+        .approval-section {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .approval-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .approval-score {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .approval-decision {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        .decision-approved {
+            background: #28a745;
+        }
+        
+        .decision-rejected {
+            background: #dc3545;
+        }
+        
+        .decision-revision {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .score-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .score-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .score-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timestamp {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .design-type-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .result-layout {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-palette"></i>
+                <span>CreaCritic</span>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Ana Sayfa</a>
+                <a href="/history" class="nav-link">Geçmiş</a>
+                <a href="/settings" class="nav-link">Ayarlar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Result Section -->
+    <section class="result-container">
+        <div class="container">
+            {% if error %}
+                <div class="result-content">
+                    <div class="result-header">
+                        <h1 class="result-title" style="color: #dc3545;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Hata
+                        </h1>
+                        <p class="result-subtitle">{{ error }}</p>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="/" class="btn btn-primary">
+                            <i class="fas fa-upload"></i>
+                            Tekrar Dene
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="result-layout">
+                    <div class="result-content">
+                        <div class="result-header">
+                            <h1 class="result-title">
+                                <i class="fas fa-chart-line"></i>
+                                Analiz Sonucu
+                            </h1>
+                            <p class="result-subtitle">
+                                {{ result.filename }} - {{ result.timestamp }}
+                            </p>
+                            {% if result.design_type %}
+                            <div class="design-type-badge">
+                                <i class="fas fa-tag"></i>
+                                {{ result.design_type }}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Critique Section -->
+                        <div class="critique-section">
+                            <div class="critique-content">
+                                {{ result.critique }}
+                            </div>
+                        </div>
+
+                        <!-- Approval Section -->
+                        <div class="approval-section">
+                            <h3 class="approval-title">
+                                <i class="fas fa-check-circle"></i>
+                                Onay Kararı
+                            </h3>
+                            
+                            <div class="approval-score">
+                                {{ "%.1f"|format(result.approval_score * 100) }}%
+                            </div>
+                            
+                            <div class="approval-decision 
+                                {% if result.approval_decision == 'ONAY' %}decision-approved
+                                {% elif result.approval_decision == 'RET' %}decision-rejected
+                                {% else %}decision-revision{% endif %}">
+                                {{ result.approval_decision }}
+                            </div>
+
+                            <!-- Scores Grid -->
+                            <div class="scores-grid">
+                                <div class="score-item">
+                                    <div class="score-label">Grafik Tasarım Standartları</div>
+                                    <div class="score-value">{{ "%.1f"|format(result.scores.grafik_tasarim_standartlari * 100) }}%</div>
+                                </div>
+                                <div class="score-item">
+                                    <div class="score-label">Piyasa Standartları</div>
+                                    <div class="score-value">{{ "%.1f"|format(result.scores.piyasa_standartlari * 100) }}%</div>
+                                </div>
+                                <div class="score-item">
+                                    <div class="score-label">Estetik & İşlevsellik</div>
+                                    <div class="score-value">{{ "%.1f"|format(result.scores.estetik_islevsellik * 100) }}%</div>
+                                </div>
+                                <div class="score-item">
+                                    <div class="score-label">Brief Uygunluğu</div>
+                                    <div class="score-value">{{ "%.1f"|format(result.scores.brief_uygunlugu * 100) }}%</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ozan Response Categories -->
+                            {% if result.ozan_response_weights %}
+                            <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                <h4 style="margin-bottom: 10px; font-size: 1rem;">
+                                    <i class="fas fa-user-tie"></i>
+                                    Ozan'ın Cevap Kategorileri
+                                </h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; font-size: 0.9rem;">
+                                    <div>
+                                        <strong>Brief Odaklı:</strong> {{ "%.1f"|format(result.ozan_response_weights.brief_odakli * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Teknik Detay:</strong> {{ "%.1f"|format(result.ozan_response_weights.teknik_detay * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Estetik-Analitik:</strong> {{ "%.1f"|format(result.ozan_response_weights.estetik_analitik * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Global Benchmark:</strong> {{ "%.1f"|format(result.ozan_response_weights.global_benchmark * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Aksiyon Odaklı:</strong> {{ "%.1f"|format(result.ozan_response_weights.aksiyon_odakli * 100) }}%
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            <!-- Dynamic Weights Info -->
+                            {% if result.dynamic_weights %}
+                            <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                <h4 style="margin-bottom: 10px; font-size: 1rem;">
+                                    <i class="fas fa-balance-scale"></i>
+                                    Dinamik Ağırlık Dağılımı
+                                </h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; font-size: 0.9rem;">
+                                    <div>
+                                        <strong>Grafik Tasarım:</strong> {{ "%.1f"|format(result.dynamic_weights.grafik_tasarim_standartlari * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Piyasa:</strong> {{ "%.1f"|format(result.dynamic_weights.piyasa_standartlari * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Estetik:</strong> {{ "%.1f"|format(result.dynamic_weights.estetik_islevsellik * 100) }}%
+                                    </div>
+                                    <div>
+                                        <strong>Brief:</strong> {{ "%.1f"|format(result.dynamic_weights.brief_uygunlugu * 100) }}%
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <a href="/" class="btn btn-primary">
+                                <i class="fas fa-upload"></i>
+                                Yeni Analiz
+                            </a>
+                            <a href="/history" class="btn btn-secondary">
+                                <i class="fas fa-history"></i>
+                                Geçmişe Git
+                            </a>
+                            <button class="btn btn-secondary" onclick="window.print()">
+                                <i class="fas fa-print"></i>
+                                Yazdır
+                            </button>
+                        </div>
+
+                        <div class="timestamp">
+                            Analiz Zamanı: {{ result.timestamp }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        <i class="fas fa-{% if category == 'success' %}check-circle{% else %}exclamation-circle{% endif %}"></i>
+                        <span>{{ message }}</span>
+                        <button class="btn-close" onclick="this.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        // Add animation to result card
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultContent = document.querySelector('.result-content');
+            
+            if (resultContent) {
+                resultContent.style.opacity = '0';
+                resultContent.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    resultContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    resultContent.style.opacity = '1';
+                    resultContent.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html> 
